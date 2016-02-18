@@ -24,4 +24,6 @@ function get_md5sum() {
     echo -n $1 | /usr/local/bin/md5sum | cut -d ' ' -f 1
 }
 
-open "$(get_github_base_url)commit/$1?diff=split#diff-$(get_md5sum $2)"
+#https://github.com/migme/adhoc-scripts/blob/4d1460bbbf7e8e57700b46aafac654479a8dea89/unity/manual/vpn/tinc/README.md
+
+open "$(get_github_base_url)blob/$1/$2"
