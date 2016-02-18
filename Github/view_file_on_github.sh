@@ -19,9 +19,4 @@ function get_github_base_url() {
     echo $giturl
 }
 
-function get_md5sum() {
-    # I installed md5sha1sum on Mac OS X by using the command "brew install md5sha1sum"
-    echo -n $1 | /usr/local/bin/md5sum | cut -d ' ' -f 1
-}
-
-open "$(get_github_base_url)commit/$1?diff=split#diff-$(get_md5sum $2)"
+open "$(get_github_base_url)blob/$1/$2"
